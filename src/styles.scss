@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+
+$fishweb-theme-primary: mat.define-palette(mat.$indigo-palette, A400, A100, A700);
+$fishweb-theme-accent: mat.define-palette(mat.$indigo-palette);
+$fishweb-theme-warn: mat.define-palette(mat.$red-palette);
+
+$fishweb-theme: mat.define-light-theme((
+  color: (
+    primary: $fishweb-theme-primary,
+    accent: $fishweb-theme-accent,
+    warn: $fishweb-theme-warn,
+  )
+));
+:root {
+  @include mat.all-component-themes($fishweb-theme);
+  @include mat.color-variants-backwards-compatibility($fishweb-theme);
+
+}
