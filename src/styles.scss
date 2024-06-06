@@ -1,11 +1,11 @@
 @use '@angular/material' as mat;
 @include mat.core();
 
-$fishweb-theme-primary: mat.define-palette(mat.$indigo-palette, A400, A100, A700);
-$fishweb-theme-accent: mat.define-palette(mat.$indigo-palette);
-$fishweb-theme-warn: mat.define-palette(mat.$red-palette);
+$fishweb-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette, A400, A100, A700);
+$fishweb-theme-accent: mat.m2-define-palette(mat.$m2-indigo-palette);
+$fishweb-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$fishweb-theme: mat.define-light-theme((
+$fishweb-theme: mat.m2-define-light-theme((
   color: (
     primary: $fishweb-theme-primary,
     accent: $fishweb-theme-accent,
