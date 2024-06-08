@@ -1,19 +1,39 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
+
 @include mat.core();
 
-$fishweb-theme-primary: mat.m2-define-palette(mat.$m2-indigo-palette, A400, A100, A700);
-$fishweb-theme-accent: mat.m2-define-palette(mat.$m2-indigo-palette);
-$fishweb-theme-warn: mat.m2-define-palette(mat.$m2-red-palette);
-
-$fishweb-theme: mat.m2-define-light-theme((
+// Define a dark theme
+$dark-theme: mat.define-theme((
   color: (
-    primary: $fishweb-theme-primary,
-    accent: $fishweb-theme-accent,
-    warn: $fishweb-theme-warn,
-  )
+    theme-type: dark,
+    primary: mat.$red-palette,
+  ),
 ));
-:root {
-  @include mat.all-component-themes($fishweb-theme);
-  @include mat.color-variants-backwards-compatibility($fishweb-theme);
 
+// Define a light theme
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$red-palette,
+  ),
+));
+
+html {
+  // Apply the dark theme by default
+  @include mat.core-theme($dark-theme);
+  @include mat.button-theme($dark-theme);
+
+  // Apply the light theme only when the user prefers light themes.
+  @media (prefers-color-scheme: light) {
+    // Use the `-color` mixins to only apply color styles without reapplying the same
+    // typography and density styles.
+    @include mat.core-color($light-theme);
+    @include mat.button-color($light-theme);
+  }
+}
+.danger {
+  // Override the checkbox hover state to indicate that this is a dangerous setting. No need to
+  // target the internal selectors for the elements that use these variables.
+  --mdc-checkbox-unselected-hover-state-layer-color: red;
+  --mdc-checkbox-unselected-hover-icon-color: red;
 }

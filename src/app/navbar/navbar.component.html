@@ -1,0 +1,11 @@
+<mat-toolbar>
+    <span>FishWEB</span>
+    <span class="example-spacer"></span>
+    <button mat-button color="primary">Home</button>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>so</button>
+      <button mat-menu-item>cool</button>
+    </mat-menu>
