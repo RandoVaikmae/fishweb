@@ -1,3 +1,23 @@
-.example-spacer {
-  flex: 1 1 auto;
+.buttons {
+  
+  position: absolute;
+  top: 5%;
+  right: 45%;
+  font-family: "Gill Sans", sans-serif;
+  font-family: inherit;
+  font-size: 220px; 
+  scale: 200%;
+  
+  
+}
+
+.buttons:hover {
+
+  
+}
+
+.home_menu {
+  position: absolute;
+  right: 0%;
+
 }

@@ -6,7 +6,7 @@
 $dark-theme: mat.define-theme((
   color: (
     theme-type: dark,
-    primary: mat.$red-palette,
+    primary: mat.$azure-palette,
   ),
 ));
 
@@ -14,23 +14,15 @@ $dark-theme: mat.define-theme((
 $light-theme: mat.define-theme((
   color: (
     theme-type: light,
-    primary: mat.$red-palette,
+    primary: mat.$azure-palette,
   ),
 ));
 
-html {
+/*html {
   // Apply the dark theme by default
   @include mat.core-theme($dark-theme);
   @include mat.button-theme($dark-theme);
-
-  // Apply the light theme only when the user prefers light themes.
-  @media (prefers-color-scheme: light) {
-    // Use the `-color` mixins to only apply color styles without reapplying the same
-    // typography and density styles.
-    @include mat.core-color($light-theme);
-    @include mat.button-color($light-theme);
-  }
-}
+}*/
 .danger {
   // Override the checkbox hover state to indicate that this is a dangerous setting. No need to
   // target the internal selectors for the elements that use these variables.
